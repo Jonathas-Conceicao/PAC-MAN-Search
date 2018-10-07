@@ -18,6 +18,11 @@ Pacman agents (in searchAgents.py).
 """
 
 import util
+from game import Directions
+n = Directions.NORTH
+s = Directions.SOUTH
+e = Directions.EAST
+w = Directions.WEST
 
 class SearchProblem:
     """
@@ -81,13 +86,34 @@ def depthFirstSearch(problem):
 
     To get started, you might want to try some of these simple commands to
     understand the search problem that is being passed in:
-
-    print "Start:", problem.getStartState()
-    print "Is the start a goal?", problem.isGoalState(problem.getStartState())
-    print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    def findPath(problem, # To get methods
+                 path,    # To store resulting path
+                 states,  # Explored states
+                 curr):   # Current state
+        if problem.isGoalState(curr):
+            return True
+        alternatives = problem.getSuccessors(curr)
+        for alt in alternatives:
+            if not alt[0] in states.list: # Skip explored states
+                path.push(alt)
+                states.push(alt[0])
+                ok = findPath(problem, path, states, alt[0])
+                if ok: return ok
+                else:
+                    path.pop() #Last path leads to nowhere
+                pass
+            pass
+        return False # Indicates That this paths leads to nowhere
+
+    start = problem.getStartState()
+    path = util.Stack()
+    states = util.Stack()
+    states.push(start)
+    findPath(problem, path, states, start)
+    pathList = [i[1] for i in path.list]
+    # print "Listinha:", pathList
+    return pathList
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""

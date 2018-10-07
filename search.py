@@ -96,7 +96,7 @@ def depthFirstSearch(problem):
         alternatives = problem.getSuccessors(curr)
         for alt in alternatives:
             if not alt[0] in states.list: # Skip explored states
-                path.push(alt)
+                path.push(alt[1])
                 states.push(alt[0])
                 ok = findPath(problem, path, states, alt[0])
                 if ok: return ok
@@ -111,9 +111,8 @@ def depthFirstSearch(problem):
     states = util.Stack()
     states.push(start)
     findPath(problem, path, states, start)
-    pathList = [i[1] for i in path.list]
     # print "Listinha:", pathList
-    return pathList
+    return path.list
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""

@@ -110,8 +110,36 @@ def depthFirstSearch(problem):
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+
+    def findPath(problem, # To get methods
+                 path,    # To store resulting path
+                 queue,   # Explorring queue
+                 states,  # Explored states
+                 curr):   # Current state
+        if problem.isGoalState(curr):
+            return path
+        alternatives = problem.getSuccessors(curr)
+        for alt in alternatives:
+            if not alt[0] in states.list: # Skip explored states
+                states.push(alt[0])
+                npath = util.Stack()
+                npath.list = list(path.list)
+                npath.push(alt[1])
+                queue.push((alt[0], # The queue holds the next state to explore  
+                            npath)) # and also the path used to get to this point
+                pass
+            pass
+
+        (q, npath) = queue.pop()
+        return findPath(problem, npath, queue, states, q)
+
+    start = problem.getStartState()
+    path = util.Stack() # Using a stack because it inserts in the tail
+    queue = util.Queue()
+    states = util.Stack()
+    states.push(start)
+    path = findPath(problem, path, queue, states, start)
+    return path.list
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""

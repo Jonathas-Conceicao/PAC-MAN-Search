@@ -33,5 +33,8 @@ lTinyM:
 aDFS:
 	$(eval AGENT=-p SearchAgent -a fn=depthFirstSearch)
 
+aBFS:
+	$(eval AGENT=-p SearchAgent -a fn=breadthFirstSearch)
+
 clean:
 	rm -f *.pyc

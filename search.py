@@ -182,12 +182,46 @@ def nullHeuristic(state, problem=None):
 
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
 
+    def findPath(problem, # To get methods
+                 path,    # To store resulting path
+                 queue,   # Explorring queue
+                 states,  # Explored states
+                 curr):   # Current state
+        if problem.isGoalState(curr):
+            return path
+        alternatives = problem.getSuccessors(curr)
+        for alt in alternatives:
+            if not alt[0] in states.list: # Skip explored states
+                states.push(alt[0])
+                npath = util.Stack()
+                npath.list = list(path.list)
+                npath.push(alt[1])
+                queue.push((alt[0], # The queue holds the next state to explore  
+                            npath)) # and also the path used to get to this point
+                pass
+            pass
+        (q, npath) = queue.pop()
+        return findPath(problem, npath, queue, states, q)
+
+    start = problem.getStartState()
+    path = util.Stack() # Using a stack because it inserts in the tail
+    queue = util.PriorityQueueWithFunction(lambda s:heuristic(s[0], problem))
+    states = util.Stack()
+    states.push(start)
+    path = findPath(problem, path, queue, states, start)
+    return path.list
+
+def hillClimbing(problem):
+    return []
+
+def simulatedAnnealing(problem):
+    return []
 
 # Abbreviations
 bfs = breadthFirstSearch
 dfs = depthFirstSearch
 astar = aStarSearch
 ucs = uniformCostSearch
+hcs = hillClimbing
+sas = simulatedAnnealing

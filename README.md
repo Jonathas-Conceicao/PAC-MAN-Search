@@ -4,7 +4,7 @@ First pratical assignment for Fundamentals of Artificial Intelligence
 ## Specification
 
 Algorithms:
-- [ ] A*
+- [X] A*
 - [ ] Simulated Annealing
 - [ ] Hill Climbing
 - [X] Uniform Cost Search

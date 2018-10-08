@@ -1,11 +1,14 @@
 PY=python2
 MAIN:=pacman.py
 
-QUIET=
-AGENT=
-LAYOUT=
-EFLAGS=
-SPEED?=--frameTime 0
+QUIET  =
+AGENT  =
+LAYOUT =
+EFLAGS =
+ZOOM   =-z .5
+SPEED? =--frameTime 0
+
+FILTER=grep 'Search nodes' | sed 's,.*: \(.*\),\1,'
 
 .PHONY: test testQuiet
 test:
@@ -23,7 +26,7 @@ testQuiet:
 
 .PHONY: play quiet
 play:
-	$(PY) $(MAIN) $(LAYOUT) $(AGENT) $(SPEED) $(QUIET) $(EFLAGS)
+	$(PY) $(MAIN) $(QUIET) $(ZOOM) $(SPEED) $(LAYOUT) $(AGENT) $(EFLAGS)
 quiet:
 	$(eval export QUIET=--quietTextGraphics)
 
@@ -60,6 +63,20 @@ aUCS_E:
 	$(eval AGENT=-p StayEastSearchAgent)
 aUCS_W:
 	$(eval AGENT=-p StayWestSearchAgent)
+
+.PHONY: aSTAR_nh aSTAR_mh aSTAR_eh
+aSTAR_nh:
+	$(eval AGENT=-p SearchAgent -a fn=astar)
+aSTAR_mh:
+	$(eval AGENT=-p SearchAgent -a fn=astar,heuristic=manhattanHeuristic)
+aSTAR_eh:
+	$(eval AGENT=-p SearchAgent -a fn=astar,heuristic=euclideanHeuristic)
+
+.PHONY: aHCS aSAS
+aHCS:
+	$(eval AGENT=-p SearchAgent -a fn=hillClimbing)
+aSAS:
+	$(eval AGENT=-p SearchAgent -a fn=simulatedAnnealing)
 
 .PHONY: clean
 clean:

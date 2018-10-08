@@ -18,11 +18,6 @@ Pacman agents (in searchAgents.py).
 """
 
 import util
-from game import Directions
-n = Directions.NORTH
-s = Directions.SOUTH
-e = Directions.EAST
-w = Directions.WEST
 
 class SearchProblem:
     """
@@ -87,6 +82,7 @@ def depthFirstSearch(problem):
     To get started, you might want to try some of these simple commands to
     understand the search problem that is being passed in:
     """
+
     def findPath(problem, # To get methods
                  path,    # To store resulting path
                  states,  # Explored states
@@ -96,22 +92,20 @@ def depthFirstSearch(problem):
         alternatives = problem.getSuccessors(curr)
         for alt in alternatives:
             if not alt[0] in states.list: # Skip explored states
-                path.push(alt[1])
                 states.push(alt[0])
                 ok = findPath(problem, path, states, alt[0])
-                if ok: return ok
-                else:
-                    path.pop() #Last path leads to nowhere
+                if ok:
+                    path.push(alt[1])
+                    return ok
                 pass
             pass
         return False # Indicates That this paths leads to nowhere
 
     start = problem.getStartState()
-    path = util.Stack()
+    path = util.Queue()
     states = util.Stack()
     states.push(start)
     findPath(problem, path, states, start)
-    # print "Listinha:", pathList
     return path.list
 
 def breadthFirstSearch(problem):

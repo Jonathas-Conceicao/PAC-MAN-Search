@@ -5,30 +5,46 @@ QUIET  =
 AGENT  =
 LAYOUT =
 EFLAGS =
-ZOOM   =-z .5
-SPEED? =--frameTime 0
+ZOOM   =
+SPEED  =
 
 FILTER=grep 'Search nodes' | sed 's,.*: \(.*\),\1,'
 
 .PHONY: test testQuiet
 test:
-	make lOpenM aDFS play
-	make lOpenM aBFS play
-	make lMediumM aUCS_S play
-	make lMediumScaryM aUCS_W play
-	make lMediumDottedM aUCS_E play
-testQuiet:
-	make quiet lOpenM aDFS play
-	make quiet lOpenM aBFS play
-	make quiet lMediumM aUCS_S play
-	make quiet lMediumScaryM aUCS_W play
-	make quiet lMediumDottedM aUCS_E play
+	make lContoursM aDFS     play
+	make lContoursM aBFS     play
+	make lContoursM aUCS_S   play
+	make lContoursM aUCS_W   play
+	make lContoursM aUCS_E   play
+	make lContoursM aSTAR_nh play
+	make lContoursM aSTAR_eh play
+	make lContoursM aSTAR_mh play
+	make lContoursM aHCS     play
+	make lContoursM aSAS     play
 
-.PHONY: play quiet
+testQuiet:
+	@make quiet lContoursM aDFS     play | $(FILTER)
+	@make quiet lContoursM aDFS     play | $(FILTER)
+	@make quiet lContoursM aBFS     play | $(FILTER)
+	@make quiet lContoursM aUCS_S   play | $(FILTER)
+	@make quiet lContoursM aUCS_W   play | $(FILTER)
+	@make quiet lContoursM aUCS_E   play | $(FILTER)
+	@make quiet lContoursM aSTAR_nh play | $(FILTER)
+	@make quiet lContoursM aSTAR_eh play | $(FILTER)
+	@make quiet lContoursM aSTAR_mh play | $(FILTER)
+	@make quiet lContoursM aHCS     play | $(FILTER)
+	@make quiet lContoursM aSAS     play | $(FILTER)
+
+.PHONY: play quiet zoom fast
 play:
 	$(PY) $(MAIN) $(QUIET) $(ZOOM) $(SPEED) $(LAYOUT) $(AGENT) $(EFLAGS)
 quiet:
-	$(eval export QUIET=--quietTextGraphics)
+	$(eval QUIET=--quietTextGraphics)
+zoom:
+	$(eval ZOOM =-z .5)
+fast:
+	$(eval SPEED =--frameTime 0)
 
 .PHONY: lBigM lContoursM lMediumDottedM lMediumM lMediumScaryM lOpenM lSmallM lTestM lTinyM
 lBigM:

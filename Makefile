@@ -49,6 +49,15 @@ lTestM:
 	$(eval LAYOUT=--layout testMaze)
 lTinyM:
 	$(eval LAYOUT=--layout tinyMaze)
+#Guilherme add Line
+lTestGB1:
+	$(eval LAYOUT=--layout testeGuiBig1)
+lTestGB2:
+	$(eval LAYOUT=--layout testeGuiBig2)
+lTestGM1:
+	$(eval LAYOUT=--layout testeGuiMediun1)
+lTestGM2:
+	$(eval LAYOUT=--layout testeGuiMediun2)
 
 .PHONY: aDFS aBFS
 aDFS:

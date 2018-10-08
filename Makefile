@@ -3,13 +3,17 @@ MAIN:=pacman.py
 
 AGENT=
 LAYOUT=
+SPEED?=--frameTime 0
 
 .PHONY: all play clean
 
-all: lSmallM aDFS play
+all:
+	make lOpenM aDFS play
+	make lOpenM aBFS play
+	make lMediumDottedM aUCS play
 
 play:
-	$(PY) $(MAIN) $(LAYOUT) $(AGENT)
+	$(PY) $(MAIN) $(LAYOUT) $(AGENT) $(SPEED)
 
 lBigM:
 	$(eval LAYOUT=--layout bigMaze)
@@ -35,6 +39,9 @@ aDFS:
 
 aBFS:
 	$(eval AGENT=-p SearchAgent -a fn=breadthFirstSearch)
+
+aUCS:
+	$(eval AGENT=-p SearchAgent -a fn=uniformCostSearch)
 
 clean:
 	rm -f *.pyc

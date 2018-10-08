@@ -7,7 +7,7 @@ Algorithms:
 - [ ] A*
 - [ ] Simulated Annealing
 - [ ] Hill Climbing
-- [ ] Uniform Cost Search
+- [X] Uniform Cost Search
 
 Create new mazes for testing:
 - [ ] 0 - Small

@@ -1,21 +1,31 @@
 PY=python2
 MAIN:=pacman.py
 
+QUIET=
 AGENT=
 LAYOUT=
+EFLAGS=
 SPEED?=--frameTime 0
 
-.PHONY: all
-all:
+.PHONY: test testQuiet
+test:
 	make lOpenM aDFS play
 	make lOpenM aBFS play
 	make lMediumM aUCS_S play
 	make lMediumScaryM aUCS_W play
 	make lMediumDottedM aUCS_E play
+testQuiet:
+	make quiet lOpenM aDFS play
+	make quiet lOpenM aBFS play
+	make quiet lMediumM aUCS_S play
+	make quiet lMediumScaryM aUCS_W play
+	make quiet lMediumDottedM aUCS_E play
 
-.PHONY: play
+.PHONY: play quiet
 play:
-	$(PY) $(MAIN) $(LAYOUT) $(AGENT) $(SPEED)
+	$(PY) $(MAIN) $(LAYOUT) $(AGENT) $(SPEED) $(QUIET) $(EFLAGS)
+quiet:
+	$(eval export QUIET=--quietTextGraphics)
 
 .PHONY: lBigM lContoursM lMediumDottedM lMediumM lMediumScaryM lOpenM lSmallM lTestM lTinyM
 lBigM:

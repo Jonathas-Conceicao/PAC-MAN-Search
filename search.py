@@ -213,7 +213,36 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     return path.list
 
 def hillClimbing(problem):
-    return []
+    
+    def findPath(problem, # To get methods
+                 path,    # To store resulting path
+                 states,  # Explored states
+                 curr):   # Current state
+        if problem.isGoalState(curr):
+            return path
+        fila = util.PriorityQueueWithFunction(lambda s:problem.getCostOfActions(s[1].list))
+        alternatives = problem.getSuccessors(curr)
+        for alt in alternatives:
+            if not alt[0] in states.list: # Skip explored states
+                states.push(alt[0])
+                npath = util.Stack()
+                npath.list = list(path.list)
+                npath.push(alt[1])
+                fila.push((alt[0], # The queue holds the next state to explore  
+                            npath)) # and also the path used to get to this point
+                pass
+            pass
+        if not fila.isEmpty():
+            q, npath = fila.pop()
+            return findPath(problem, npath, states, q)
+        return path
+
+    start = problem.getStartState()
+    path = util.Stack() # Using a stack because it inserts in the tail
+    states = util.Stack()
+    states.push(start)
+    path = findPath(problem, path, states, start)
+    return path.list    
 
 def simulatedAnnealing(problem):
     return []

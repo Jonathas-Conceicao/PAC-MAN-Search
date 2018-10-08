@@ -8,14 +8,14 @@ Grupo:
 ## Algoritmos
 
 Quatro algoritmos foram implementados para busca de caminho no jogo do PAC-MAN:
-- [A*](###a*)
-- [Têmpera Simulada](###tempera_simulada)
-- [Subida de Encosta](###subida_de_encosta)
-- [Custo Uniforme](###custo_uniforme)
+- [A*](#a-estrela)
+- [Têmpera Simulada](#têmpera-simulada)
+- [Subida de Encosta](#subida-de-encosta)
+- [Custo Uniforme](#custo-uniforme)
 
-Ao [fim](###resultados_e_comparação) são apresentados resultados e comparação entre os algoritmos.
+Ao fim são apresentados [resultados e comparação](#resultados-e-comparação) entre os algoritmos.
 
-### A*
+### A Estrela
 _Text and images_
 
 ### Têmpera Simulada

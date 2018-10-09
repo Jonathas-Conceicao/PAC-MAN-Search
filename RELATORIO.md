@@ -74,3 +74,43 @@ _Intro Text_
 _Text about Gif_
 
 ## Resultados e Comparação
+Para comparação dos algoritmos a execução em dois labirintos diferentes foi considerada.
+As tabelas apresentam o desempenho dos quatro algoritmos para os labirintos em questão.
+
+No Labirinto 1 o **A\*** foi usado com a heurística de _Distância Manhattan_,
+a **Custo Uniforme** com pesos que favorecem a ida para _esquerda_.
+Pode-se observar que,
+como há uma parede separando o caminho reto do PAC-MAN à comida,
+o algoritmo **A\*** usando a _Distância Manhattan_ resulta numa resposta sub-ótima;
+enquanto os pesos usados no **Custo Uniforme** o permitem encontrar a melhor resposta,
+além de gastar menos esforço computacional.
+
+![Exemplo da busca em Custo Uniforme](media/maze1.gif)  
+**Figura 1: Labirinto 1**
+
+**Tabela 1: Comparação no Labirinto 1**
+|     Algoritmo     | Qnt. Estados | Pontuação |
+|:-----------------:|:------------:|:---------:|
+|         A*        |      76      |    470    |
+|   Custo Uniforme  |      64      |    474    |
+|  Têmpera Simulada |              |           |
+| Subida de Encosta |       5      |     -     |
+
+Já no Labirinto 2, o **A\*** foi usado com a heurística de (...),
+a _Custo Uniforme_ com pesos (...).
+Pode-se observar que o (...)
+
+![Exemplo da busca em Custo Uniforme](media/maze2.gif)  
+**Figura 2: Labirinto 2**
+
+**Tabela 2: Comparação no Labirinto 2**
+|     Algoritmo     | Qnt. Estados | Pontuação |
+|:-----------------:|:------------:|:---------:|
+|         A*        |       0      |     0     |
+|   Custo Uniforme  |       0      |     0     |
+|  Têmpera Simulada |       0      |     0     |
+| Subida de Encosta |       0      |     0     |
+
+
+
+

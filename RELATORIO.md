@@ -176,6 +176,10 @@ e seguindo sua ideia de busca.
 
 **Figura 7: Labirinto pequeno 5.**
 
+![Map Mediun 1](media/mapMediun1.png)
+
+**Figura 8: Labirinto médio 1.**
+
 ![Maze n](media/labn.png)  
 **Figura n+2: Labirinto n+2**
 

@@ -139,7 +139,18 @@ a escolha do algoritmo (e da heurística) devem levar em consideração o proble
 para que assim se possa encontrar a resposta ótima com menor esforço computacional.
 
 ## Labirintos Extras
-_Texto comentando os diferentes tipos de labirintos_
+Para este trabalho foi desenvolvido mais mapas alem dos _default_ para testes situacionais dos
+algoritmos. Seguindo os mesmos padrões já existentes, mapas _Small_, _Mediun_ e _Big_, em alguns
+dos mapas foi proporcionado mais caminhos para vitoria, porém alguns com uma distancia um pouco menor
+ou seja uma solução a primeira vista melhor, para poder se analisar como os algoritmos explorariam
+o mapa e qual seria a decisão tomada pelo mesmo.
+Outros proporcionam um mapa um tanto quanto bagunçado com uma ou no máximo duas possibilidades de
+vitoria, porém com percursos maiores e mais "complicados" para se chegar a uma escolha (uma escolha a
+qual não se baseia somente na vitória e sim qual caminho aparentemente seria o melhor a seguir).
+Tais mapas nos proporcionaram uma melhor comparação entre os algoritmos aqui aplicados, pois cada
+algoritmo demonstra um comportamento diferente em mapas iguais (o que é correto), com a construção de
+novos labirintos tornou-se possível um o qual o caminhos tomado por todo é o mesmo, porem cada um explorando
+e seguindo sua ideia de busca.
 
 ![Maze n](media/labn.png)  
 **Figura n+2: Labirinto n+2**

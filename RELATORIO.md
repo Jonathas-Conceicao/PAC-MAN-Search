@@ -1,4 +1,4 @@
-# Busca de Caminhos - PAC-MAN - Relatório de Resultados,
+# Busca de Caminhos - PAC-MAN - Relatório de Resultados
 
 Grupo:
 -	Guilherme Souza,

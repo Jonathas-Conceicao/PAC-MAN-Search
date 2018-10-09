@@ -116,11 +116,21 @@ aASS_mh:
 aASS_eh:
 	$(eval AGENT=-p SearchAgent -a fn=astar,heuristic=euclideanHeuristic)
 
-.PHONY: aHCS aSAS
-aHCS:
+.PHONY: aHCS_nh aHCS_mh aHCS_eh
+aHCS_nh:
 	$(eval AGENT=-p SearchAgent -a fn=hillClimbing)
-aSAS:
+aHCS_mh:
+	$(eval AGENT=-p SearchAgent -a fn=hillClimbing,heuristic=manhattanHeuristic)
+aHCS_eh:
+	$(eval AGENT=-p SearchAgent -a fn=hillClimbing,heuristic=euclideanHeuristic)
+
+.PHONY: aSAS_nh aSAS_mh aSAS_eh
+aSAS_nh:
 	$(eval AGENT=-p SearchAgent -a fn=simulatedAnnealing)
+aSAS_mh:
+	$(eval AGENT=-p SearchAgent -a fn=simulatedAnnealing,heuristic=manhattanHeuristic)
+aSAS_eh:
+	$(eval AGENT=-p SearchAgent -a fn=simulatedAnnealing,heuristic=euclideanHeuristic)
 
 .PHONY: clean
 clean:

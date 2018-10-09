@@ -18,6 +18,7 @@ Pacman agents (in searchAgents.py).
 """
 
 import util
+from random import randint
 
 class SearchProblem:
     """
@@ -61,6 +62,9 @@ class SearchProblem:
         """
         util.raiseNotDefined()
 
+class RandomQueue(util.Queue):
+    def pop(self):
+        return self.list.pop(randint(0, len(self.list) -1))
 
 def tinyMazeSearch(problem):
     """
@@ -212,15 +216,15 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     path = findPath(problem, path, queue, states, start)
     return path.list
 
-def hillClimbing(problem):
-    
+def hillClimbing(problem, heuristic=nullHeuristic):
+
     def findPath(problem, # To get methods
                  path,    # To store resulting path
                  states,  # Explored states
                  curr):   # Current state
         if problem.isGoalState(curr):
             return path
-        fila = util.PriorityQueueWithFunction(lambda s:problem.getCostOfActions(s[1].list))
+        fila = util.PriorityQueueWithFunction(lambda t:heuristic(t[0], problem))
         alternatives = problem.getSuccessors(curr)
         for alt in alternatives:
             if not alt[0] in states.list: # Skip explored states
@@ -228,8 +232,8 @@ def hillClimbing(problem):
                 npath = util.Stack()
                 npath.list = list(path.list)
                 npath.push(alt[1])
-                fila.push((alt[0], # The queue holds the next state to explore  
-                            npath)) # and also the path used to get to this point
+                fila.push((alt[0],
+                           npath))
                 pass
             pass
         if not fila.isEmpty():
@@ -242,10 +246,44 @@ def hillClimbing(problem):
     states = util.Stack()
     states.push(start)
     path = findPath(problem, path, states, start)
-    return path.list    
+    return path.list
 
-def simulatedAnnealing(problem):
-    return []
+def simulatedAnnealing(problem, heuristic=nullHeuristic):
+
+    def findPath(problem, # To get methods
+                 path,    # To store resulting path
+                 states,  # Explored states
+                 curr,    # Current state
+                 i):      # Interations count
+        if problem.isGoalState(curr) or i == 0:
+            return (True, path)
+        fila = RandomQueue()
+        alternatives = problem.getSuccessors(curr)
+        for alt in alternatives:
+            if not alt[0] in states.list: # Skip explored states
+                states.push(alt[0])
+                npath = util.Stack()
+                npath.list = list(path.list)
+                npath.push(alt[1])
+                fila.push((alt[0],
+                           npath))
+                pass
+            pass
+
+        while not fila.isEmpty(): # For each local neighbors
+            q, npath = fila.pop()
+            if heuristic(q, problem) * (1/i) <= heuristic(curr, problem): # If valid answear is found, return
+                ok, rpath = findPath(problem, npath, states, q, i-1) # Try to find path
+                if ok:
+                    return ok, rpath
+        return (False, path) # Have not found the a valid answear
+
+    start = problem.getStartState()
+    path = util.Stack()
+    states = util.Stack()
+    states.push(start)
+    _, path = findPath(problem, path, states, start, 800)
+    return path.list
 
 # Abbreviations
 bfs = breadthFirstSearch

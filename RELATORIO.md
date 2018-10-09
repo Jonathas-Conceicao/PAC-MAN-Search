@@ -23,7 +23,8 @@ sendo os primeiros a serem explorados de um tom mais forte,
 e os últimos um tom mais leve.
 Nos Gifs o PAC-MAN percorre o caminho que encontrei para atingir o estado final.
 
-Ao fim são apresentados [resultados e comparação](#resultados-e-comparação) entre os algoritmos.
+Ao fim são apresentados [resultados e comparação](#resultados-e-comparação) entre os algoritmos
+e [labirintos extras](#labirintos-extras) implementados para testes.
 
 ### A Estrela
 O **A\*** é um algoritmo de _busca informada_ que pode ser aplicado em grafos ponderados.
@@ -112,6 +113,11 @@ Pode-se observar que o (...)
 |   Custo Uniforme  |       0      |     0     |
 |  Têmpera Simulada |       0      |     0     |
 | Subida de Encosta |       0      |     0     |
+
+## Labirintos Extras
+
+![Maze n](media/labn.png)  
+**Figura n+2: Labirinto n+2**
 
 
 

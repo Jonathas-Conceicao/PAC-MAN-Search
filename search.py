@@ -272,7 +272,7 @@ def simulatedAnnealing(problem, heuristic=nullHeuristic):
 
         while not fila.isEmpty(): # For each local neighbors
             q, npath = fila.pop()
-            if heuristic(q, problem) <= heuristic(curr, problem): # If valid answear is found, return
+            if heuristic(q, problem) * (1/i) <= heuristic(curr, problem): # If valid answear is found, return
                 ok, rpath = findPath(problem, npath, states, q, i-1) # Try to find path
                 if ok:
                     return ok, rpath

@@ -97,9 +97,11 @@ Pode-se observar que,
 o algoritmo **A\*** usando a _Distância Manhattan_ resulta numa resposta sub-ótima;
 (2) Com os pesos usados no **Custo Uniforme**, é possível encontrar a melhor resposta,
 além de gastar menos esforço computacional;
-(3) a **Têmpera Simulada** (..);
-(4) a **Subida de Encosta**, por sua vez, para a busca antes de encontrar a resposta final,
-não gerando pontuação final.
+(3) a **Têmpera Simulada** usando heurística de pesos iguais,
+por conta da aleatoriedade do algoritmo gera resultados inferiores,
+mas sempre encontra a resposta final;
+(4) a **Subida de Encosta**, por sua vez, usando uma heurística de _Distância Manhattan_,
+falha ao encontrar a resposta final, não gerando uma pontuação final.
 
 ![Maze 1](media/maze1.png)  
 **Figura 1: Labirinto 1**
@@ -110,16 +112,17 @@ não gerando pontuação final.
 |:-----------------:|:------------:|:---------:|
 |         A*        |      76      |    470    |
 |   Custo Uniforme  |      64      |    474    |
-|  Têmpera Simulada |              |           |
-| Subida de Encosta |       5      |     -     |
+|  Têmpera Simulada |    98.26*    |  453.86*  |
+| Subida de Encosta |      23      |     -     |
+_*: Média de 30 execuções_
 
 Já no Labirinto 2, o **A\*** foi usado com a heurística de _Distância Euclidiana_,
 e o _Custo Uniforme_ com pesos que favorecem a ida para _esquerda_.
 Pode-se observar que,
 (1) o **A\*** termina explorando todos os estados possíveis, mas encontra a resposta ótima;
 (2) a busca em **Custo Uniforme** também explora todos os estados e encontra a resposta ótima;
-(3) a **Têmpera Simulada** (..);
-(4) a **Subida de Enconsta**, por fim, encontra a resposta final sem se perder em caminhos secundários,
+(3) a **Têmpera Simulada** usando heurística com pesos iguais encontrou resposta ótima;
+(4) a **Subida de Encosta**, por fim, encontrou a resposta final sem se perder em caminhos secundários,
 encontrado a resposta ótima com menos esforço computacional.
 
 ![Maze 2](media/maze2.png)  
@@ -131,8 +134,9 @@ encontrado a resposta ótima com menos esforço computacional.
 |:-----------------:|:------------:|:---------:|
 |         A*        |      48      |    471    |
 |   Custo Uniforme  |      48      |    471    |
-|  Têmpera Simulada |              |           |
+|  Têmpera Simulada |      48*     |    471*   |
 | Subida de Encosta |      39      |    471    |
+_*: Média de 30 execuções_
 
 Assim como pode ser observado pelos experimentos relatados aqui,
 a escolha do algoritmo (e da heurística) devem levar em consideração o problema ser tratado,

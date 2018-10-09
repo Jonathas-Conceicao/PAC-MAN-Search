@@ -274,7 +274,8 @@ def simulatedAnnealing(problem, heuristic=nullHeuristic):
             q, npath = fila.pop()
             if heuristic(q, problem) <= heuristic(curr, problem): # If valid answear is found, return
                 ok, rpath = findPath(problem, npath, states, q, i-1) # Try to find path
-                return ok, rpath
+                if ok:
+                    return ok, rpath
         return (False, path) # Have not found the a valid answear
 
     start = problem.getStartState()

@@ -157,7 +157,7 @@ novos labirintos tornou-se possível um o qual o caminhos tomado por todo é o m
 e seguindo sua ideia de busca.
 
 ![Map Small 1](media/mapSmall1.png)
-**Figura 3: Labirinto pequeno 1.
+**Figura 3: Labirinto pequeno 1.**
 
 ![Maze n](media/labn.png)  
 **Figura n+2: Labirinto n+2**

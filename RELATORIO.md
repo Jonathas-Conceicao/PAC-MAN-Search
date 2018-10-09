@@ -88,13 +88,14 @@ além de gastar menos esforço computacional.
 ![Exemplo da busca em Custo Uniforme](media/maze1.gif)  
 **Figura 1: Labirinto 1**
 
-**Tabela 1: Comparação no Labirinto 1**  
-|     Algoritmo     | Qnt. Estados | Pontuação |  
-|:-----------------:|:------------:|:---------:|  
-|         A*        |      76      |    470    |  
-|   Custo Uniforme  |      64      |    474    |  
-|  Têmpera Simulada |              |           |  
-| Subida de Encosta |       5      |     -     |  
+**Tabela 1: Comparação no Labirinto 1**
+
+|     Algoritmo     | Qnt. Estados | Pontuação |
+|:-----------------:|:------------:|:---------:|
+|         A*        |      76      |    470    |
+|   Custo Uniforme  |      64      |    474    |
+|  Têmpera Simulada |              |           |
+| Subida de Encosta |       5      |     -     |
 
 Já no Labirinto 2, o **A\*** foi usado com a heurística de (...),
 a _Custo Uniforme_ com pesos (...).
@@ -103,13 +104,14 @@ Pode-se observar que o (...)
 ![Exemplo da busca em Custo Uniforme](media/maze2.gif)  
 **Figura 2: Labirinto 2**
 
-**Tabela 2: Comparação no Labirinto 2**  
-|     Algoritmo     | Qnt. Estados | Pontuação |  
-|:-----------------:|:------------:|:---------:|  
-|         A*        |       0      |     0     |  
-|   Custo Uniforme  |       0      |     0     |  
-|  Têmpera Simulada |       0      |     0     |  
-| Subida de Encosta |       0      |     0     |  
+**Tabela 2: Comparação no Labirinto 2**
+
+|     Algoritmo     | Qnt. Estados | Pontuação |
+|:-----------------:|:------------:|:---------:|
+|         A*        |       0      |     0     |
+|   Custo Uniforme  |       0      |     0     |
+|  Têmpera Simulada |       0      |     0     |
+| Subida de Encosta |       0      |     0     |
 
 
 

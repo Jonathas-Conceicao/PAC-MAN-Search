@@ -192,6 +192,11 @@ e seguindo sua ideia de busca.
 
 **Figura 11: Labirinto médio 4.**
 
+![Map Big 1](media/mapBig1.png)
+
+**Figura 12: Labirinto grande 1.**
+
+
 ![Maze n](media/labn.png)  
 **Figura n+2: Labirinto n+2**
 

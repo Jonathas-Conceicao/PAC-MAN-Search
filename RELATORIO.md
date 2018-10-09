@@ -43,7 +43,7 @@ _Intro Text_
 ### Subida de Encosta
 _Intro Text_
 
-![Exemplo da busca em Custo Uniforme](media/UCS.gif)
+![Exemplo da busca em Custo Uniforme](media/HCS.gif)
 
 _Text about Gif_
 

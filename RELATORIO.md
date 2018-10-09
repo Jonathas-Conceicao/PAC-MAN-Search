@@ -22,7 +22,9 @@ tem-se como objetivo encontrar o caminho de menor custo até um nodo objetivo.
 Ele executa mantendo uma árvore de caminhos originados do nodo inicial
 e passando pelas arestas até que o nodo final seja atingido.
 
-![Exemplo da busca A*](media/astar.gif)
+![Exemplo da busca A*](media/ASS.gif)
+
+_Text about Gif_
 
 ### Custo Uniforme
 A busca em **Custo Uniforme**,
@@ -33,10 +35,16 @@ e usar a busca em **Custo Uniforme** para fazer o PAC-MAN priorizar caminho em u
 
 ![Exemplo da busca em Custo Uniforme](media/UCS.gif)
 
+_Text about Gif_
+
 ### Têmpera Simulada
-_Text and images_
+_Intro Text_
 
 ### Subida de Encosta
-_Text and images_
+_Intro Text_
+
+![Exemplo da busca em Custo Uniforme](media/UCS.gif)
+
+_Text about Gif_
 
 ## Resultados e Comparação

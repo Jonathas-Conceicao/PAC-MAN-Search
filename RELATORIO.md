@@ -160,6 +160,22 @@ e seguindo sua ideia de busca.
 
 **Figura 3: Labirinto pequeno 1.**
 
+![Map Small 2](media/mapSmall2.png)
+
+**Figura 4: Labirinto pequeno 2.**
+
+![Map Small 3](media/mapSmall3.png)
+
+**Figura 5: Labirinto pequeno 3.**
+
+![Map Small 4](media/mapSmall4.png)
+
+**Figura 6: Labirinto pequeno 4.**
+
+![Map Small 5](media/mapSmall5.png)
+
+**Figura 7: Labirinto pequeno 5.**
+
 ![Maze n](media/labn.png)  
 **Figura n+2: Labirinto n+2**
 

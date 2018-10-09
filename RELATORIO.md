@@ -16,7 +16,7 @@ Quatro algoritmos foram implementados para busca de caminho no jogo do PAC-MAN:
 Os Gifs neste relatório apresentam mostram
 (1) o PAC-MAN,
 (2) o estado final (representado pela comida),
-(3) o labirtion que ele deve resolver,
+(3) o labirinto que ele deve resolver,
 (4) e os estados explorados.
 Estados explorados são marcados em vermelho,
 sendo os primeiros a serem explorados de um tom mais forte,
@@ -67,14 +67,14 @@ _Intro Text_
 _Text about Gif_
 
 ### Subida de Encosta
-A **Subida de Escosta** é um algoritmo de busca com melhoria iterativa.
+A **Subida de Encosta** é um algoritmo de busca com melhoria iterativa.
 A ideia é começar com um estado inicial e melhora-lo iterativamente,
 a altura de qualquer ponto da superfície corresponde a função de avaliação do estado
 naquele ponto. O algoritmo se "move" pela superfície buscando pontos mais altos/baixos
 o **Subida de Encosta** se move em valor crescente (encosta a cima), terminando quando
 alcançar seu pico máximo ou seja nem um vizinho será mais alto que o ponto atual (nem um
 vizinho tem valor mais alto), não havendo necessidade de armazenar a arvore inteira,
-guardando somente o estado atual, para que possa tentar melhora-lo e serguir a procura
+guardando somente o estado atual, para que possa tentar melhora-lo e seguir a procura
 pelo de maior pico. 
 
 ![Exemplo da busca em Custo Uniforme](media/HCS.gif)  
@@ -89,6 +89,8 @@ superfície encontrada pelo algoritmo.
 ## Resultados e Comparação
 Para comparação dos algoritmos a execução em dois labirintos diferentes foi considerada.
 As tabelas apresentam o desempenho dos quatro algoritmos para os labirintos em questão.
+Como o **Têmpera Simulada** tem uma fator probabilístico,
+a tabela apresa resultados da média de 30 execuções.
 
 No Labirinto 1 o **A\*** foi usado com a heurística de _Distância Manhattan_,
 a **Custo Uniforme** com pesos que favorecem a ida para _esquerda_.
@@ -112,9 +114,8 @@ falha ao encontrar a resposta final, não gerando uma pontuação final.
 |:-----------------:|:------------:|:---------:|
 |         A*        |      76      |    470    |
 |   Custo Uniforme  |      64      |    474    |
-|  Têmpera Simulada |    98.26*    |  453.86*  |
+|  Têmpera Simulada |    98.26     |  453.86   |
 | Subida de Encosta |      23      |     -     |
-_*: Média de 30 execuções_
 
 Já no Labirinto 2, o **A\*** foi usado com a heurística de _Distância Euclidiana_,
 e o _Custo Uniforme_ com pesos que favorecem a ida para _esquerda_.
@@ -134,16 +135,15 @@ encontrado a resposta ótima com menos esforço computacional.
 |:-----------------:|:------------:|:---------:|
 |         A*        |      48      |    471    |
 |   Custo Uniforme  |      48      |    471    |
-|  Têmpera Simulada |      48*     |    471*   |
+|  Têmpera Simulada |      48      |    471    |
 | Subida de Encosta |      39      |    471    |
-_*: Média de 30 execuções_
 
 Assim como pode ser observado pelos experimentos relatados aqui,
 a escolha do algoritmo (e da heurística) devem levar em consideração o problema ser tratado,
 para que assim se possa encontrar a resposta ótima com menor esforço computacional.
 
 ## Labirintos Extras
-Para este trabalho foi desenvolvido mais mapas alem dos _default_ para testes situacionais dos
+Para este trabalho foi desenvolvido mais mapas além dos _default_ para testes situacionais dos
 algoritmos. Seguindo os mesmos padrões já existentes, mapas _Small_, _Mediun_ e _Big_, em alguns
 dos mapas foi proporcionado mais caminhos para vitoria, porém alguns com uma distancia um pouco menor
 ou seja uma solução a primeira vista melhor, para poder se analisar como os algoritmos explorariam

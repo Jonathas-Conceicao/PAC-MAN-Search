@@ -67,12 +67,24 @@ _Intro Text_
 _Text about Gif_
 
 ### Subida de Encosta
-_Intro Text_
+A **Subida de Escosta** é um algoritmo de busca com melhoria iterativa.
+A ideia é começar com um estado inicial e melhora-lo iterativamente,
+a altura de qualquer ponto da superfície corresponde a função de avaliação do estado
+naquele ponto. O algoritmo se "move" pela superfície buscando pontos mais altos/baixos
+o **Subida de Encosta** se move em valor crescente (encosta a cima), terminando quando
+alcançar seu pico máximo ou seja nem um vizinho será mais alto que o ponto atual (nem um
+vizinho tem valor mais alto), não havendo necessidade de armazenar a arvore inteira,
+guardando somente o estado atual, para que possa tentar melhora-lo e serguir a procura
+pelo de maior pico. 
 
 ![Exemplo da busca em Custo Uniforme](media/HCS.gif)  
 **Gif 4: Exemplo da busca em Custo Uniforme**
 
-_Text about Gif_
+O Gif 4 demonstra a busca com melhoria iterativa utilizando o algoritmo **subida de encosta**.
+Procura a superfície de maior altura (maior valor), seguindo em direção na ordem das mesmas. Por
+buscar sempre o pico mais alto muitas vezes dependendo das suas escolhas pode por acabar preso em
+uma superfície a qual não contem um descendente maior, dessa forma finalizando a busca na maior
+superfície encontrada pelo algoritmo.  
 
 ## Resultados e Comparação
 Para comparação dos algoritmos a execução em dois labirintos diferentes foi considerada.

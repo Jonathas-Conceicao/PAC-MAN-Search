@@ -180,6 +180,18 @@ e seguindo sua ideia de busca.
 
 **Figura 8: Labirinto médio 1.**
 
+![Map Mediun 2](media/mapMediun2.png)
+
+**Figura 9: Labirinto médio 2.**
+
+![Map Mediun 3](media/mapMediun3.png)
+
+**Figura 10: Labirinto médio 3.**
+
+![Map Mediun 4](media/mapMediun4.png)
+
+**Figura 11: Labirinto médio 4.**
+
 ![Maze n](media/labn.png)  
 **Figura n+2: Labirinto n+2**
 

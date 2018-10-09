@@ -85,7 +85,7 @@ o algoritmo **A\*** usando a _Distância Manhattan_ resulta numa resposta sub-ó
 enquanto os pesos usados no **Custo Uniforme** o permitem encontrar a melhor resposta,
 além de gastar menos esforço computacional.
 
-![Exemplo da busca em Custo Uniforme](media/maze1.gif)  
+![Maze 1](media/maze1.png)  
 **Figura 1: Labirinto 1**
 
 **Tabela 1: Comparação no Labirinto 1**
@@ -101,7 +101,7 @@ Já no Labirinto 2, o **A\*** foi usado com a heurística de (...),
 a _Custo Uniforme_ com pesos (...).
 Pode-se observar que o (...)
 
-![Exemplo da busca em Custo Uniforme](media/maze2.gif)  
+![Maze 2](media/maze2.png)  
 **Figura 2: Labirinto 2**
 
 **Tabela 2: Comparação no Labirinto 2**

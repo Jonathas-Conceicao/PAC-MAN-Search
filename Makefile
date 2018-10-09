@@ -10,31 +10,32 @@ SPEED  =
 
 FILTER=grep 'Search nodes' | sed 's,.*: \(.*\),\1,'
 
+
 .PHONY: test testQuiet
 test:
-	make lContoursM aDFS     play
-	make lContoursM aBFS     play
-	make lContoursM aUCS_S   play
-	make lContoursM aUCS_W   play
-	make lContoursM aUCS_E   play
-	make lContoursM aSTAR_nh play
-	make lContoursM aSTAR_eh play
-	make lContoursM aSTAR_mh play
-	make lContoursM aHCS     play
-	make lContoursM aSAS     play
+	make lContoursM aDFS    play
+	make lContoursM aBFS    play
+	make lContoursM aUCS_S  lay
+	make lContoursM aUCS_W  play
+	make lContoursM aUCS_E  play
+	make lContoursM aASS_nh play
+	make lContoursM aASS_eh play
+	make lContoursM aASS_mh play
+	make lContoursM aHCS    play
+	make lContoursM aSAS    play
 
 testQuiet:
-	@make quiet lContoursM aDFS     play | $(FILTER)
-	@make quiet lContoursM aDFS     play | $(FILTER)
-	@make quiet lContoursM aBFS     play | $(FILTER)
-	@make quiet lContoursM aUCS_S   play | $(FILTER)
-	@make quiet lContoursM aUCS_W   play | $(FILTER)
-	@make quiet lContoursM aUCS_E   play | $(FILTER)
-	@make quiet lContoursM aSTAR_nh play | $(FILTER)
-	@make quiet lContoursM aSTAR_eh play | $(FILTER)
-	@make quiet lContoursM aSTAR_mh play | $(FILTER)
-	@make quiet lContoursM aHCS     play | $(FILTER)
-	@make quiet lContoursM aSAS     play | $(FILTER)
+	@make quiet lContoursM aDFS    play | $(FILTER)
+	@make quiet lContoursM aDFS    play | $(FILTER)
+	@make quiet lContoursM aBFS    play | $(FILTER)
+	@make quiet lContoursM aUCS_S  play | $(FILTER)
+	@make quiet lContoursM aUCS_W  play | $(FILTER)
+	@make quiet lContoursM aUCS_E  play | $(FILTER)
+	@make quiet lContoursM aASS_nh play | $(FILTER)
+	@make quiet lContoursM aASS_eh play | $(FILTER)
+	@make quiet lContoursM aASS_mh play | $(FILTER)
+	@make quiet lContoursM aHCS    play | $(FILTER)
+	@make quiet lContoursM aSAS    play | $(FILTER)
 
 .PHONY: play quiet zoom fast
 play:
@@ -89,12 +90,12 @@ aUCS_E:
 aUCS_W:
 	$(eval AGENT=-p StayWestSearchAgent)
 
-.PHONY: aSTAR_nh aSTAR_mh aSTAR_eh
-aSTAR_nh:
+.PHONY: aASS_nh aASS_mh aASS_eh
+aASS_nh:
 	$(eval AGENT=-p SearchAgent -a fn=astar)
-aSTAR_mh:
+aASS_mh:
 	$(eval AGENT=-p SearchAgent -a fn=astar,heuristic=manhattanHeuristic)
-aSTAR_eh:
+aASS_eh:
 	$(eval AGENT=-p SearchAgent -a fn=astar,heuristic=euclideanHeuristic)
 
 .PHONY: aHCS aSAS

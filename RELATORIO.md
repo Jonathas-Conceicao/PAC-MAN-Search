@@ -32,7 +32,7 @@ tem-se como objetivo encontrar o caminho de menor custo até um nodo objetivo.
 Ele executa mantendo uma árvore de caminhos originados do nodo inicial
 e passando pelas arestas até que o nodo final seja atingido.
 
-![Exemplo da busca A*](media/ASS.gif)
+![Exemplo da busca A*](media/ASS.gif)  
 **Gif 1: Exemplo da busca A\***
 
 O Gif 1 mostra uma busca em A* executada usando
@@ -47,7 +47,7 @@ também chamada de _algoritmo de Dijkstra_,
 No jogo do PAC-MAN pode-se aplicar peso às arestas
 e usar a busca em **Custo Uniforme** para fazer o PAC-MAN priorizar caminho em uma direção.
 
-![Exemplo da busca em Custo Uniforme](media/UCS.gif)
+![Exemplo da busca em Custo Uniforme](media/UCS.gif)  
 **Gif 2: Exemplo da busca em Custo Uniforme**
 
 O Gif 2 mostra uma busca de Custo Uniforme executada usando
@@ -60,7 +60,7 @@ o PAC-MAN eventualmente encontra o estado final e executa o percurso.
 ### Têmpera Simulada
 _Intro Text_
 
-![Exemplo da busca usando Tempera Simulada](media/SAS.gif)
+![Exemplo da busca usando Tempera Simulada](media/SAS.gif)  
 **Gif 3: Exemplo da busca usando Tempera Simulada**
 
 _Text about Gif_
@@ -68,7 +68,7 @@ _Text about Gif_
 ### Subida de Encosta
 _Intro Text_
 
-![Exemplo da busca em Custo Uniforme](media/HCS.gif)
+![Exemplo da busca em Custo Uniforme](media/HCS.gif)  
 **Gif 4: Exemplo da busca em Custo Uniforme**
 
 _Text about Gif_

@@ -122,6 +122,10 @@ encontrado a resposta ótima com menos esforço computacional.
 |  Têmpera Simulada |              |           |
 | Subida de Encosta |      39      |    471    |
 
+Assim como pode ser observado pelos experimentos relatados aqui,
+a escolha do algoritmo (e da heurística) devem levar em consideração o problema ser tratado,
+para que assim se possa encontrar a resposta ótima com menor esforço computacional.
+
 ## Labirintos Extras
 _Texto comentando os diferentes tipos de labirintos_
 

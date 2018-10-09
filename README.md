@@ -14,4 +14,4 @@ Create new mazes for testing:
 - [X]  Medium
 - [X]  Big
 
-Result reports: [Relatório (pt_BR)](#RELATORIO.md)
+Result reports: [Relatório (pt_BR)](README.md)

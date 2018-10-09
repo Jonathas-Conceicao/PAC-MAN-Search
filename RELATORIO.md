@@ -33,8 +33,8 @@ tem-se como objetivo encontrar o caminho de menor custo até um nodo objetivo.
 Ele executa mantendo uma árvore de caminhos originados do nodo inicial
 e passando pelas arestas até que o nodo final seja atingido.
 
-![Exemplo da busca A*](media/ASS.gif)  
-**Gif 1: Exemplo da busca A\***
+<center>![Exemplo da busca A*](media/ASS.gif)  </center>
+<center>**Gif 1: Exemplo da busca A\***</center>
 
 O Gif 1 mostra uma busca em A* executada usando
 uma heurística de _Distância Manhattan_,
@@ -48,8 +48,8 @@ também chamada de _algoritmo de Dijkstra_,
 No jogo do PAC-MAN pode-se aplicar peso às arestas
 e usar a busca em **Custo Uniforme** para fazer o PAC-MAN priorizar caminho em uma direção.
 
-![Exemplo da busca em Custo Uniforme](media/UCS.gif)  
-**Gif 2: Exemplo da busca em Custo Uniforme**
+<center>![Exemplo da busca em Custo Uniforme](media/UCS.gif)  </center>
+<center>**Gif 2: Exemplo da busca em Custo Uniforme**</center>
 
 O Gif 2 mostra uma busca de Custo Uniforme executada usando
 pesos que priorizam a ida para esquerda.
@@ -61,16 +61,16 @@ o PAC-MAN eventualmente encontra o estado final e executa o percurso.
 ### Têmpera Simulada
 _Intro Text_
 
-![Exemplo da busca usando Tempera Simulada](media/SAS.gif)  
-**Gif 3: Exemplo da busca usando Tempera Simulada**
+<center>![Exemplo da busca usando Tempera Simulada](media/SAS.gif)  </center>
+<center>**Gif 3: Exemplo da busca usando Tempera Simulada**</center>
 
 _Text about Gif_
 
 ### Subida de Encosta
 _Intro Text_
 
-![Exemplo da busca em Custo Uniforme](media/HCS.gif)  
-**Gif 4: Exemplo da busca em Custo Uniforme**
+<center>![Exemplo da busca em Custo Uniforme](media/HCS.gif)  </center>
+<center>**Gif 4: Exemplo da busca em Custo Uniforme**</center>
 
 _Text about Gif_
 
@@ -89,17 +89,17 @@ além de gastar menos esforço computacional;
 (4) a **Subida de Encosta**, por sua vez, para a busca antes de encontrar a resposta final,
 não gerando pontuação final.
 
-![Maze 1](media/maze1.png)  
-**Figura 1: Labirinto 1**
+<center>![Maze 1](media/maze1.png)  </center>
+<center>**Figura 1: Labirinto 1**</center>
 
-**Tabela 1: Comparação no Labirinto 1**
+<center>**Tabela 1: Comparação no Labirinto 1**</center>
 
-|     Algoritmo     | Qnt. Estados | Pontuação |
+<center>|     Algoritmo     | Qnt. Estados | Pontuação |
 |:-----------------:|:------------:|:---------:|
 |         A*        |      76      |    470    |
 |   Custo Uniforme  |      64      |    474    |
 |  Têmpera Simulada |              |           |
-| Subida de Encosta |       5      |     -     |
+| Subida de Encosta |       5      |     -     |</center>
 
 Já no Labirinto 2, o **A\*** foi usado com a heurística de _Distância Euclidiana_,
 e o _Custo Uniforme_ com pesos que favorecem a ida para _esquerda_.
@@ -110,17 +110,17 @@ Pode-se observar que,
 (4) a **Subida de Enconsta**, por fim, encontra a resposta final sem se perder em caminhos secundários,
 encontrado a resposta ótima com menos esforço computacional.
 
-![Maze 2](media/maze2.png)  
-**Figura 2: Labirinto 2**
+<center>![Maze 2](media/maze2.png)  </center>
+<center>**Figura 2: Labirinto 2**</center>
 
-**Tabela 2: Comparação no Labirinto 2**
+<center>**Tabela 2: Comparação no Labirinto 2**</center>
 
-|     Algoritmo     | Qnt. Estados | Pontuação |
+<center>|     Algoritmo     | Qnt. Estados | Pontuação |
 |:-----------------:|:------------:|:---------:|
 |         A*        |      48      |    471    |
 |   Custo Uniforme  |      48      |    471    |
 |  Têmpera Simulada |              |           |
-| Subida de Encosta |      39      |    471    |
+| Subida de Encosta |      39      |    471    |</center>
 
 Assim como pode ser observado pelos experimentos relatados aqui,
 a escolha do algoritmo (e da heurística) devem levar em consideração o problema ser tratado,

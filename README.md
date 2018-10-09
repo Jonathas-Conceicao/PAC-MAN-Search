@@ -6,12 +6,12 @@ First pratical assignment for Fundamentals of Artificial Intelligence
 Algorithms:
 - [X] A*
 - [ ] Simulated Annealing
-- [ ] Hill Climbing
+- [X] Hill Climbing
 - [X] Uniform Cost Search
 
 Create new mazes for testing:
-- [ ] 0 - Small
-- [ ] 0 - Medium
-- [ ] 0 - Big
+- [X]  Small
+- [X]  Medium
+- [X]  Big
 
-Result reports (pdf):
+Result reports: [Relatório (pt_BR)](#REPORT.md)

@@ -156,6 +156,8 @@ algoritmo demonstra um comportamento diferente em mapas iguais (o que é correto
 novos labirintos tornou-se possível um o qual o caminhos tomado por todo é o mesmo, porem cada um explorando
 e seguindo sua ideia de busca.
 
+![Map Small 1](media/mapSmall1.png)
+
 ![Maze n](media/labn.png)  
 **Figura n+2: Labirinto n+2**
 

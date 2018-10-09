@@ -2,3 +2,4 @@ RECORD=ffmpeg -video_size 660x396 -framerate 25 -f x11grab -i :0.0+1,1 -c:v libx
 
 CONVERT=ffmpeg -i /tmp/record.mp4 /tmp/record.gif -hide_banner -y
 
+AND_PRINT=& sleep 1;import -window root /tmp/tmp.png -crop 630x515+1+1

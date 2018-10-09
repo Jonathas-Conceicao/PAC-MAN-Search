@@ -71,10 +71,28 @@ lTestGB1:
 	$(eval LAYOUT=--layout testeGuiBig1)
 lTestGB2:
 	$(eval LAYOUT=--layout testeGuiBig2)
+lTestGB3:
+	$(eval LAYOUT=--layout testeGuiBig3)
+lTestGB4:
+	$(eval LAYOUT=--layout testeGuiBig4)
 lTestGM1:
 	$(eval LAYOUT=--layout testeGuiMediun1)
 lTestGM2:
 	$(eval LAYOUT=--layout testeGuiMediun2)
+lTestGM3:
+	$(eval LAYOUT=--layout testeGuiMediun3)
+lTestGM4:
+	$(eval LAYOUT=--layout testeGuiMediun4)
+lTestGS1:
+	$(eval LAYOUT=--layout testGuiSmall1)
+lTestGS2:
+	$(eval LAYOUT=--layout testGuiSmall2)
+lTestGS3:
+	$(eval LAYOUT=--layout testGuiSmall3)
+lTestGS4:
+	$(eval LAYOUT=--layout testGuiSmall4)
+lTestGS5:
+	$(eval LAYOUT=--layout testGuiSmall5)
 
 .PHONY: aDFS aBFS
 aDFS:

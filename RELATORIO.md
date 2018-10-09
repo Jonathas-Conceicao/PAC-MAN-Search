@@ -1,4 +1,4 @@
-# Busca de Caminhos - PAC-MAN - Relatório de Resultados,
+# Busca de Caminhos - PAC-MAN - Relatório de Resultados
 
 Grupo:
 -	Guilherme Souza,
@@ -81,10 +81,13 @@ As tabelas apresentam o desempenho dos quatro algoritmos para os labirintos em q
 No Labirinto 1 o **A\*** foi usado com a heurística de _Distância Manhattan_,
 a **Custo Uniforme** com pesos que favorecem a ida para _esquerda_.
 Pode-se observar que,
-como há uma parede separando o caminho reto do PAC-MAN à comida,
+(1) como há uma parede separando o caminho reto do PAC-MAN à comida,
 o algoritmo **A\*** usando a _Distância Manhattan_ resulta numa resposta sub-ótima;
-enquanto os pesos usados no **Custo Uniforme** o permitem encontrar a melhor resposta,
-além de gastar menos esforço computacional.
+(2) Com os pesos usados no **Custo Uniforme**, é possível encontrar a melhor resposta,
+além de gastar menos esforço computacional;
+(3) a **Têmpera Simulada** (..);
+(4) a **Subida de Encosta**, por sua vez, para a busca antes de encontrar a resposta final,
+não gerando pontuação final.
 
 ![Maze 1](media/maze1.png)  
 **Figura 1: Labirinto 1**
@@ -98,9 +101,14 @@ além de gastar menos esforço computacional.
 |  Têmpera Simulada |              |           |
 | Subida de Encosta |       5      |     -     |
 
-Já no Labirinto 2, o **A\*** foi usado com a heurística de (...),
-a _Custo Uniforme_ com pesos (...).
-Pode-se observar que o (...)
+Já no Labirinto 2, o **A\*** foi usado com a heurística de _Distância Euclidiana_,
+e o _Custo Uniforme_ com pesos que favorecem a ida para _esquerda_.
+Pode-se observar que,
+(1) o **A\*** termina explorando todos os estados possíveis, mas encontra a resposta ótima;
+(2) a busca em **Custo Uniforme** também explora todos os estados e encontra a resposta ótima;
+(3) a **Têmpera Simulada** (..);
+(4) a **Subida de Enconsta**, por fim, encontra a resposta final sem se perder em caminhos secundários,
+encontrado a resposta ótima com menos esforço computacional.
 
 ![Maze 2](media/maze2.png)  
 **Figura 2: Labirinto 2**
@@ -109,12 +117,17 @@ Pode-se observar que o (...)
 
 |     Algoritmo     | Qnt. Estados | Pontuação |
 |:-----------------:|:------------:|:---------:|
-|         A*        |       0      |     0     |
-|   Custo Uniforme  |       0      |     0     |
-|  Têmpera Simulada |       0      |     0     |
-| Subida de Encosta |       0      |     0     |
+|         A*        |      48      |    471    |
+|   Custo Uniforme  |      48      |    471    |
+|  Têmpera Simulada |              |           |
+| Subida de Encosta |      39      |    471    |
+
+Assim como pode ser observado pelos experimentos relatados aqui,
+a escolha do algoritmo (e da heurística) devem levar em consideração o problema ser tratado,
+para que assim se possa encontrar a resposta ótima com menor esforço computacional.
 
 ## Labirintos Extras
+_Texto comentando os diferentes tipos de labirintos_
 
 ![Maze n](media/labn.png)  
 **Figura n+2: Labirinto n+2**

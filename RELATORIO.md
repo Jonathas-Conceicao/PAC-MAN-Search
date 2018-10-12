@@ -59,7 +59,13 @@ alternativas com mais uma curva para cima ou para baixo passa a ser consideradas
 o PAC-MAN eventualmente encontra o estado final e executa o percurso.
 
 ### Têmpera Simulada
-_Intro Text_
+O **Têmpera Simulada** é uma técnica de busca com melhora iterativa probabilística, similar
+à subida de encosta.
+Ele parte de um estado inicia com uma "temperatura" inicial alta e substitui a solução
+atual por uma solução vizinha no espaço de estados com uma probabilidade de aceitar
+soluções não ótimas baseadas na temperatura, que diminui a cada iteração.
+Dessa forma aos poucos ele tende a aceitar cada vez menos soluções piores do que a atual
+e converge a um estado global ótimo.
 
 ![Exemplo da busca usando Tempera Simulada](media/SAS.gif)  
 **Gif 3: Exemplo da busca usando Tempera Simulada**

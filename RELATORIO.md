@@ -33,13 +33,13 @@ tem-se como objetivo encontrar o caminho de menor custo até um nodo objetivo.
 Ele executa mantendo uma árvore de caminhos originados do nodo inicial
 e passando pelas arestas até que o nodo final seja atingido.
 
-![Exemplo da busca A*](media/ASS.gif)  
-**Gif 1: Exemplo da busca A\***
-
 O Gif 1 mostra uma busca em A* executada usando
 uma heurística de _Distância Manhattan_,
 como há um caminho direto,
 o PAC-MAN encontra o estado final sem precisar explorar estados adicionais.
+
+![Exemplo da busca A*](media/ASS.gif)  
+**Gif 1: Exemplo da busca A\***
 
 ### Custo Uniforme
 A busca em **Custo Uniforme**,
@@ -48,15 +48,15 @@ também chamada de _algoritmo de Dijkstra_,
 No jogo do PAC-MAN pode-se aplicar peso às arestas
 e usar a busca em **Custo Uniforme** para fazer o PAC-MAN priorizar caminho em uma direção.
 
-![Exemplo da busca em Custo Uniforme](media/UCS.gif)  
-**Gif 2: Exemplo da busca em Custo Uniforme**
-
 O Gif 2 mostra uma busca de Custo Uniforme executada usando
 pesos que priorizam a ida para esquerda.
 Um caminho direto para esquerda é o primeiro a ser considerado,
 ao atingir uma parede,
 alternativas com mais uma curva para cima ou para baixo passa a ser consideradas,
 o PAC-MAN eventualmente encontra o estado final e executa o percurso.
+
+![Exemplo da busca em Custo Uniforme](media/UCS.gif)  
+**Gif 2: Exemplo da busca em Custo Uniforme**
 
 ### Têmpera Simulada
 O **Têmpera Simulada** é uma técnica de busca com melhora iterativa probabilística, similar
@@ -70,8 +70,6 @@ e converge a um estado global ótimo.
 ![Exemplo da busca usando Tempera Simulada](media/SAS.gif)  
 **Gif 3: Exemplo da busca usando Tempera Simulada**
 
-_Text about Gif_
-
 ### Subida de Encosta
 A **Subida de Encosta** é um algoritmo de busca com melhoria iterativa.
 A ideia é começar com um estado inicial e melhora-lo iterativamente,
@@ -81,16 +79,16 @@ o **Subida de Encosta** se move em valor crescente (encosta a cima), terminando 
 alcançar seu pico máximo ou seja nem um vizinho será mais alto que o ponto atual (nem um
 vizinho tem valor mais alto), não havendo necessidade de armazenar a arvore inteira,
 guardando somente o estado atual, para que possa tentar melhora-lo e seguir a procura
-pelo de maior pico. 
-
-![Exemplo da busca em Custo Uniforme](media/HCS.gif)  
-**Gif 4: Exemplo da busca em Custo Uniforme**
+pelo de maior pico.  
 
 O Gif 4 demonstra a busca com melhoria iterativa utilizando o algoritmo **subida de encosta**.
 Procura a superfície de maior altura (maior valor), seguindo em direção na ordem das mesmas. Por
 buscar sempre o pico mais alto muitas vezes dependendo das suas escolhas pode por acabar preso em
 uma superfície a qual não contem um descendente maior, dessa forma finalizando a busca na maior
 superfície encontrada pelo algoritmo.  
+
+![Exemplo da busca em Custo Uniforme](media/HCS.gif)  
+**Gif 4: Exemplo da busca em Custo Uniforme**
 
 ## Resultados e Comparação
 Para comparação dos algoritmos a execução em dois labirintos diferentes foi considerada.
@@ -99,7 +97,7 @@ Como o **Têmpera Simulada** tem uma fator probabilístico,
 a tabela apresa resultados da média de 30 execuções.
 Os gifs apresentam uma execução de cada algoritmo na mesma ordem da tabela.
 
-No Labirinto Medio 3 o **A\*** foi usado com a heurística de _Distância Manhattan_,
+No Labirinto Médio 3 o **A\*** foi usado com a heurística de _Distância Manhattan_,
 a **Custo Uniforme** com pesos que favorecem a ida para _esquerda_.
 Pode-se observar que,
 (1) como há uma parede separando o caminho reto do PAC-MAN à comida,
@@ -214,10 +212,3 @@ e seguindo sua ideia de busca.
 ![Map Big 4](media/mapBig4.png)
 
 **Figura 13: Labirinto grande 4.**
-
-![Maze n](media/labn.png)  
-**Figura n+2: Labirinto n+2**
-
-
-
-

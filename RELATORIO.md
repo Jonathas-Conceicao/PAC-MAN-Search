@@ -59,7 +59,13 @@ alternativas com mais uma curva para cima ou para baixo passa a ser consideradas
 o PAC-MAN eventualmente encontra o estado final e executa o percurso.
 
 ### Têmpera Simulada
-_Intro Text_
+O **Têmpera Simulada** é uma técnica de busca com melhora iterativa probabilística, similar
+à subida de encosta.
+Ele parte de um estado inicial com uma "temperatura" inicial alta e substitui a solução
+atual por uma solução vizinha no espaço de estados com uma probabilidade de aceitar
+soluções não ótimas baseadas na temperatura, que diminui a cada iteração.
+Dessa forma aos poucos ele tende a aceitar cada vez menos soluções piores do que a atual
+e converge a um estado global ótimo.
 
 ![Exemplo da busca usando Tempera Simulada](media/SAS.gif)  
 **Gif 3: Exemplo da busca usando Tempera Simulada**
@@ -155,6 +161,58 @@ Tais mapas nos proporcionaram uma melhor comparação entre os algoritmos aqui a
 algoritmo demonstra um comportamento diferente em mapas iguais (o que é correto), com a construção de
 novos labirintos tornou-se possível um o qual o caminhos tomado por todo é o mesmo, porem cada um explorando
 e seguindo sua ideia de busca.
+
+![Map Small 1](media/mapSmall1.png)
+
+**Figura 3: Labirinto pequeno 1.**
+
+![Map Small 2](media/mapSmall2.png)
+
+**Figura 4: Labirinto pequeno 2.**
+
+![Map Small 3](media/mapSmall3.png)
+
+**Figura 5: Labirinto pequeno 3.**
+
+![Map Small 4](media/mapSmall4.png)
+
+**Figura 6: Labirinto pequeno 4.**
+
+![Map Small 5](media/mapSmall5.png)
+
+**Figura 7: Labirinto pequeno 5.**
+
+![Map Mediun 1](media/mapMediun1.png)
+
+**Figura 8: Labirinto médio 1.**
+
+![Map Mediun 2](media/mapMediun2.png)
+
+**Figura 9: Labirinto médio 2.**
+
+![Map Mediun 3](media/mapMediun3.png)
+
+**Figura 10: Labirinto médio 3.**
+
+![Map Mediun 4](media/mapMediun4.png)
+
+**Figura 11: Labirinto médio 4.**
+
+![Map Big 1](media/mapBig1.png)
+
+**Figura 12: Labirinto grande 1.**
+
+![Map Big 2](media/mapBig2.png)
+
+**Figura 13: Labirinto grande 2.**
+
+![Map Big 3](media/mapBig3.png)
+
+**Figura 14: Labirinto grande 3.**
+
+![Map Big 4](media/mapBig4.png)
+
+**Figura 15: Labirinto grande 4.**
 
 ![Maze n](media/labn.png)  
 **Figura n+2: Labirinto n+2**

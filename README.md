@@ -5,7 +5,7 @@ First pratical assignment for Fundamentals of Artificial Intelligence
 
 Algorithms:
 - [X] A*
-- [ ] Simulated Annealing
+- [X] Simulated Annealing
 - [X] Hill Climbing
 - [X] Uniform Cost Search
 

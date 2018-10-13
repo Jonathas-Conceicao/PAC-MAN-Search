@@ -97,8 +97,9 @@ Para comparação dos algoritmos a execução em dois labirintos diferentes foi 
 As tabelas apresentam o desempenho dos quatro algoritmos para os labirintos em questão.
 Como o **Têmpera Simulada** tem uma fator probabilístico,
 a tabela apresa resultados da média de 30 execuções.
+Os gifs apresentam uma execução de cada algoritmo na mesma ordem da tabela.
 
-No Labirinto 1 o **A\*** foi usado com a heurística de _Distância Manhattan_,
+No Labirinto Medio 3 o **A\*** foi usado com a heurística de _Distância Manhattan_,
 a **Custo Uniforme** com pesos que favorecem a ida para _esquerda_.
 Pode-se observar que,
 (1) como há uma parede separando o caminho reto do PAC-MAN à comida,
@@ -111,10 +112,10 @@ mas sempre encontra a resposta final;
 (4) a **Subida de Encosta**, por sua vez, usando uma heurística de _Distância Manhattan_,
 falha ao encontrar a resposta final, não gerando uma pontuação final.
 
-![Maze 1](media/maze1.png)  
-**Figura 1: Labirinto 1**
+![Maze 1](media/maze1.gif)  
+**Gif 5: Execuções no Labirinto Médio 3**
 
-**Tabela 1: Comparação no Labirinto 1**
+**Tabela 1: Comparação no Labirinto Médio 3**
 
 |     Algoritmo     | Qnt. Estados | Pontuação |
 |:-----------------:|:------------:|:---------:|
@@ -123,33 +124,33 @@ falha ao encontrar a resposta final, não gerando uma pontuação final.
 |  Têmpera Simulada |    98.26     |  453.86   |
 | Subida de Encosta |      23      |     -     |
 
-Já no Labirinto 2, o **A\*** foi usado com a heurística de _Distância Euclidiana_,
-e o _Custo Uniforme_ com pesos que favorecem a ida para _esquerda_.
+Já no Labirinto Pequeno 3, o **A\*** e o **Têmpera Simulada** foram usados com a heurística de _Distância Euclidiana_,
+o **Custo Uniforme** com pesos que favorecem a ida para _esquerda_
+e o **Subida de Encosta** com pesos iguais para todos os nodos.
 Pode-se observar que,
-(1) o **A\*** termina explorando todos os estados possíveis, mas encontra a resposta ótima;
-(2) a busca em **Custo Uniforme** também explora todos os estados e encontra a resposta ótima;
-(3) a **Têmpera Simulada** usando heurística com pesos iguais encontrou resposta ótima;
-(4) a **Subida de Encosta**, por fim, encontrou a resposta final sem se perder em caminhos secundários,
+(1) o **A\*** e o  **Custo Uniforme** exploram todos os estados possíveis, mas encontram a resposta ótima;
+(2) a **Têmpera Simulada** varia entre explorar 48 e 39 estados, mas sempre encontra resposta ótima;
+(3) a **Subida de Encosta**, por fim, encontrou a resposta final sem se perder em caminhos secundários,
 encontrado a resposta ótima com menos esforço computacional.
 
-![Maze 2](media/maze2.png)  
-**Figura 2: Labirinto 2**
+![Maze 2](media/maze2.gif)  
+**Gif 6: Execuções no Labirinto Pequeno 3**
 
-**Tabela 2: Comparação no Labirinto 2**
+**Tabela 2: Comparação no Labirinto Pequeno 3**
 
 |     Algoritmo     | Qnt. Estados | Pontuação |
 |:-----------------:|:------------:|:---------:|
 |         A*        |      48      |    471    |
 |   Custo Uniforme  |      48      |    471    |
-|  Têmpera Simulada |      48      |    471    |
+|  Têmpera Simulada |      43.2    |    471    |
 | Subida de Encosta |      39      |    471    |
 
 Assim como pode ser observado pelos experimentos relatados aqui,
-a escolha do algoritmo (e da heurística) devem levar em consideração o problema ser tratado,
+a escolha não só do algoritmo, mas também da heurística, devem levar em consideração o problema a ser tratado,
 para que assim se possa encontrar a resposta ótima com menor esforço computacional.
 
 ## Labirintos Extras
-Para este trabalho foi desenvolvido mais mapas além dos _default_ para testes situacionais dos
+Para este trabalho foram desenvolvidos mais mapas além dos _default_ para testes situacionais dos
 algoritmos. Seguindo os mesmos padrões já existentes, mapas _Small_, _Mediun_ e _Big_, em alguns
 dos mapas foi proporcionado mais caminhos para vitoria, porém alguns com uma distancia um pouco menor
 ou seja uma solução a primeira vista melhor, para poder se analisar como os algoritmos explorariam
@@ -164,55 +165,55 @@ e seguindo sua ideia de busca.
 
 ![Map Small 1](media/mapSmall1.png)
 
-**Figura 3: Labirinto pequeno 1.**
+**Figura 1: Labirinto pequeno 1.**
 
 ![Map Small 2](media/mapSmall2.png)
 
-**Figura 4: Labirinto pequeno 2.**
+**Figura 2: Labirinto pequeno 2.**
 
 ![Map Small 3](media/mapSmall3.png)
 
-**Figura 5: Labirinto pequeno 3.**
+**Figura 3: Labirinto pequeno 3.**
 
 ![Map Small 4](media/mapSmall4.png)
 
-**Figura 6: Labirinto pequeno 4.**
+**Figura 4: Labirinto pequeno 4.**
 
 ![Map Small 5](media/mapSmall5.png)
 
-**Figura 7: Labirinto pequeno 5.**
+**Figura 5: Labirinto pequeno 5.**
 
 ![Map Mediun 1](media/mapMediun1.png)
 
-**Figura 8: Labirinto médio 1.**
+**Figura 6: Labirinto médio 1.**
 
 ![Map Mediun 2](media/mapMediun2.png)
 
-**Figura 9: Labirinto médio 2.**
+**Figura 7: Labirinto médio 2.**
 
 ![Map Mediun 3](media/mapMediun3.png)
 
-**Figura 10: Labirinto médio 3.**
+**Figura 8: Labirinto médio 3.**
 
 ![Map Mediun 4](media/mapMediun4.png)
 
-**Figura 11: Labirinto médio 4.**
+**Figura 9: Labirinto médio 4.**
 
 ![Map Big 1](media/mapBig1.png)
 
-**Figura 12: Labirinto grande 1.**
+**Figura 10: Labirinto grande 1.**
 
 ![Map Big 2](media/mapBig2.png)
 
-**Figura 13: Labirinto grande 2.**
+**Figura 11: Labirinto grande 2.**
 
 ![Map Big 3](media/mapBig3.png)
 
-**Figura 14: Labirinto grande 3.**
+**Figura 12: Labirinto grande 3.**
 
 ![Map Big 4](media/mapBig4.png)
 
-**Figura 15: Labirinto grande 4.**
+**Figura 13: Labirinto grande 4.**
 
 ![Maze n](media/labn.png)  
 **Figura n+2: Labirinto n+2**

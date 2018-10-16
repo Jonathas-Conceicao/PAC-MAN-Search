@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:6419/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>RELATORIO.md - Grip</title>
+  <link rel="icon" href="http://localhost:6419/__/grip/static/favicon.ico">
+  <link rel="stylesheet" href="./RELATORIO_files/site-3ba3ae12a2f85a6290c97a963107cc97.css">
+  <link rel="stylesheet" href="./RELATORIO_files/frameworks-5aa6d9885579bb2359f66266aee26f3b.css">
+  <link rel="stylesheet" href="./RELATORIO_files/github-2bf9c5ab90af2104656120603fa7ae6a.css">
+  <link rel="stylesheet" href="./RELATORIO_files/octicons.css">
+  <style>
+    /* Page tweaks */
+    .preview-page {
+      margin-top: 64px;
+    }
+    /* User-content tweaks */
+    .timeline-comment-wrapper > .timeline-comment:after,
+    .timeline-comment-wrapper > .timeline-comment:before {
+      content: none;
+    }
+    /* User-content overrides */
+    .discussion-timeline.wide {
+      width: 920px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div id="preview-page" class="preview-page" data-autorefresh-url="/__/grip/refresh/">
+
+    
+
+      <div role="main" class="main-content">
+        <div class="container new-discussion-timeline experiment-repo-nav">
+          <div class="repository-content">
+            <div id="readme" class="readme boxed-group clearfix announce instapaper_body md">
+              
+                <h3>
+                  <span class="octicon octicon-book"></span>
+                  RELATORIO.md
+                </h3>
+              
+              <article class="markdown-body entry-content" itemprop="text" id="grip-content">
+                <h1>
+<a id="user-content-busca-de-caminhos---pac-man---relatório-de-resultados" class="anchor" href="http://localhost:6419/#busca-de-caminhos---pac-man---relat%C3%B3rio-de-resultados" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Busca de Caminhos - PAC-MAN - Relatório de Resultados</h1>
+<p>Grupo:</p>
+<ul>
+<li>Guilherme Souza,</li>
+<li>Jonathas Conceição,</li>
+<li>Mateus Schmalfuss.</li>
+</ul>
+<h2>
+<a id="user-content-algoritmos" class="anchor" href="http://localhost:6419/#algoritmos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Algoritmos</h2>
+<p>Quatro algoritmos foram implementados para busca de caminho no jogo do PAC-MAN:</p>
+<ul>
+<li><a href="http://localhost:6419/#a-estrela">A*</a></li>
+<li><a href="http://localhost:6419/#custo-uniforme">Custo Uniforme</a></li>
+<li><a href="http://localhost:6419/#t%C3%AAmpera-simulada">Têmpera Simulada</a></li>
+<li><a href="http://localhost:6419/#subida-de-encosta">Subida de Encosta</a></li>
+</ul>
+<p>Os Gifs neste relatório apresentam mostram
+(1) o PAC-MAN,
+(2) o estado final (representado pela comida),
+(3) o labirinto que ele deve resolver,
+(4) e os estados explorados.
+Estados explorados são marcados em vermelho,
+sendo os primeiros a serem explorados de um tom mais forte,
+e os últimos um tom mais leve.
+Nos Gifs o PAC-MAN percorre o caminho que encontrei para atingir o estado final.</p>
+<p>Ao fim são apresentados <a href="http://localhost:6419/#resultados-e-compara%C3%A7%C3%A3o">resultados e comparação</a> entre os algoritmos
+e <a href="http://localhost:6419/#labirintos-extras">labirintos extras</a> implementados para testes.</p>
+<h3>
+<a id="user-content-a-estrela" class="anchor" href="http://localhost:6419/#a-estrela" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A Estrela</h3>
+<p>O <strong>A*</strong> é um algoritmo de <em>busca informada</em> que pode ser aplicado em grafos ponderados.
+Partindo de um nodo inicial do grafo,
+tem-se como objetivo encontrar o caminho de menor custo até um nodo objetivo.
+Ele executa mantendo uma árvore de caminhos originados do nodo inicial
+e passando pelas arestas até que o nodo final seja atingido.</p>
+<p>O Gif 1 mostra uma busca em A* executada usando
+uma heurística de <em>Distância Manhattan</em>,
+como há um caminho direto,
+o PAC-MAN encontra o estado final sem precisar explorar estados adicionais.</p>
+<p><a href="./RELATORIO_files/ASS.gif" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/ASS.gif" alt="Exemplo da busca A*" style="max-width:100%;"></a><br>
+<strong>Gif 1: Exemplo da busca A*</strong></p>
+<h3>
+<a id="user-content-custo-uniforme" class="anchor" href="http://localhost:6419/#custo-uniforme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Custo Uniforme</h3>
+<p>A busca em <strong>Custo Uniforme</strong>,
+também chamada de <em>algoritmo de Dijkstra</em>,
+é usado para encontrar a menor distância entre dois nodos em um grafo ponderado.
+No jogo do PAC-MAN pode-se aplicar peso às arestas
+e usar a busca em <strong>Custo Uniforme</strong> para fazer o PAC-MAN priorizar caminho em uma direção.</p>
+<p>O Gif 2 mostra uma busca de Custo Uniforme executada usando
+pesos que priorizam a ida para esquerda.
+Um caminho direto para esquerda é o primeiro a ser considerado,
+ao atingir uma parede,
+alternativas com mais uma curva para cima ou para baixo passa a ser consideradas,
+o PAC-MAN eventualmente encontra o estado final e executa o percurso.</p>
+<p><a href="./RELATORIO_files/UCS.gif" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/UCS.gif" alt="Exemplo da busca em Custo Uniforme" style="max-width:100%;"></a><br>
+<strong>Gif 2: Exemplo da busca em Custo Uniforme</strong></p>
+<h3>
+<a id="user-content-têmpera-simulada" class="anchor" href="http://localhost:6419/#t%C3%AAmpera-simulada" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Têmpera Simulada</h3>
+<p>O <strong>Têmpera Simulada</strong> é uma técnica de busca com melhora iterativa probabilística, similar
+à subida de encosta.
+Ele parte de um estado inicial com uma "temperatura" inicial alta e substitui a solução
+atual por uma solução vizinha no espaço de estados com uma probabilidade de aceitar
+soluções não ótimas baseadas na temperatura, que diminui a cada iteração.
+Dessa forma aos poucos ele tende a aceitar cada vez menos soluções piores do que a atual
+e converge a um estado global ótimo.</p>
+<p><a href="./RELATORIO_files/SAS.gif" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/SAS.gif" alt="Exemplo da busca usando Tempera Simulada" style="max-width:100%;"></a><br>
+<strong>Gif 3: Exemplo da busca usando Tempera Simulada</strong></p>
+<h3>
+<a id="user-content-subida-de-encosta" class="anchor" href="http://localhost:6419/#subida-de-encosta" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Subida de Encosta</h3>
+<p>A <strong>Subida de Encosta</strong> é um algoritmo de busca com melhoria iterativa.
+A ideia é começar com um estado inicial e melhora-lo iterativamente,
+a altura de qualquer ponto da superfície corresponde a função de avaliação do estado
+naquele ponto. O algoritmo se "move" pela superfície buscando pontos mais altos/baixos
+o <strong>Subida de Encosta</strong> se move em valor crescente (encosta a cima), terminando quando
+alcançar seu pico máximo ou seja nem um vizinho será mais alto que o ponto atual (nem um
+vizinho tem valor mais alto), não havendo necessidade de armazenar a arvore inteira,
+guardando somente o estado atual, para que possa tentar melhora-lo e seguir a procura
+pelo de maior pico.</p>
+<p>O Gif 4 demonstra a busca com melhoria iterativa utilizando o algoritmo <strong>subida de encosta</strong>.
+Procura a superfície de maior altura (maior valor), seguindo em direção na ordem das mesmas. Por
+buscar sempre o pico mais alto muitas vezes dependendo das suas escolhas pode por acabar preso em
+uma superfície a qual não contem um descendente maior, dessa forma finalizando a busca na maior
+superfície encontrada pelo algoritmo.</p>
+<p><a href="./RELATORIO_files/HCS.gif" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/HCS.gif" alt="Exemplo da busca em Custo Uniforme" style="max-width:100%;"></a><br>
+<strong>Gif 4: Exemplo da busca em Custo Uniforme</strong></p>
+<h2>
+<a id="user-content-resultados-e-comparação" class="anchor" href="http://localhost:6419/#resultados-e-compara%C3%A7%C3%A3o" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resultados e Comparação</h2>
+<p>Para comparação dos algoritmos a execução em dois labirintos diferentes foi considerada.
+As tabelas apresentam o desempenho dos quatro algoritmos para os labirintos em questão.
+Como o <strong>Têmpera Simulada</strong> tem uma fator probabilístico,
+a tabela apresa resultados da média de 30 execuções.
+Os gifs apresentam uma execução de cada algoritmo na mesma ordem da tabela.</p>
+<p>No Labirinto Médio 3 o <strong>A*</strong> foi usado com a heurística de <em>Distância Manhattan</em>,
+a <strong>Custo Uniforme</strong> com pesos que favorecem a ida para <em>esquerda</em>.
+Pode-se observar que,
+(1) como há uma parede separando o caminho reto do PAC-MAN à comida,
+o algoritmo <strong>A*</strong> usando a <em>Distância Manhattan</em> resulta numa resposta sub-ótima;
+(2) Com os pesos usados no <strong>Custo Uniforme</strong>, é possível encontrar a melhor resposta,
+além de gastar menos esforço computacional;
+(3) a <strong>Têmpera Simulada</strong> usando heurística de pesos iguais,
+por conta da aleatoriedade do algoritmo gera resultados inferiores,
+mas sempre encontra a resposta final;
+(4) a <strong>Subida de Encosta</strong>, por sua vez, usando uma heurística de <em>Distância Manhattan</em>,
+falha ao encontrar a resposta final, não gerando uma pontuação final.</p>
+<p><a href="./RELATORIO_files/maze1.gif" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/maze1.gif" alt="Maze 1" style="max-width:100%;"></a><br>
+<strong>Gif 5: Execuções no Labirinto Médio 3</strong></p>
+<p><strong>Tabela 1: Comparação no Labirinto Médio 3</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Algoritmo</th>
+<th align="center">Qnt. Estados</th>
+<th align="center">Pontuação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">A*</td>
+<td align="center">76</td>
+<td align="center">470</td>
+</tr>
+<tr>
+<td align="center">Custo Uniforme</td>
+<td align="center">64</td>
+<td align="center">474</td>
+</tr>
+<tr>
+<td align="center">Têmpera Simulada</td>
+<td align="center">98.26</td>
+<td align="center">453.86</td>
+</tr>
+<tr>
+<td align="center">Subida de Encosta</td>
+<td align="center">23</td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+<p>Já no Labirinto Pequeno 3, o <strong>A*</strong> e o <strong>Têmpera Simulada</strong> foram usados com a heurística de <em>Distância Euclidiana</em>,
+o <strong>Custo Uniforme</strong> com pesos que favorecem a ida para <em>esquerda</em>
+e o <strong>Subida de Encosta</strong> com pesos iguais para todos os nodos.
+Pode-se observar que,
+(1) o <strong>A*</strong> e o  <strong>Custo Uniforme</strong> exploram todos os estados possíveis, mas encontram a resposta ótima;
+(2) a <strong>Têmpera Simulada</strong> varia entre explorar 48 e 39 estados, mas sempre encontra resposta ótima;
+(3) a <strong>Subida de Encosta</strong>, por fim, encontrou a resposta final sem se perder em caminhos secundários,
+encontrado a resposta ótima com menos esforço computacional.</p>
+<p><a href="./RELATORIO_files/maze2.gif" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/maze2.gif" alt="Maze 2" style="max-width:100%;"></a><br>
+<strong>Gif 6: Execuções no Labirinto Pequeno 3</strong></p>
+<p><strong>Tabela 2: Comparação no Labirinto Pequeno 3</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Algoritmo</th>
+<th align="center">Qnt. Estados</th>
+<th align="center">Pontuação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">A*</td>
+<td align="center">48</td>
+<td align="center">471</td>
+</tr>
+<tr>
+<td align="center">Custo Uniforme</td>
+<td align="center">48</td>
+<td align="center">471</td>
+</tr>
+<tr>
+<td align="center">Têmpera Simulada</td>
+<td align="center">43.2</td>
+<td align="center">471</td>
+</tr>
+<tr>
+<td align="center">Subida de Encosta</td>
+<td align="center">39</td>
+<td align="center">471</td>
+</tr>
+</tbody>
+</table>
+<p>Assim como pode ser observado pelos experimentos relatados aqui,
+a escolha não só do algoritmo, mas também da heurística, devem levar em consideração o problema a ser tratado,
+para que assim se possa encontrar a resposta ótima com menor esforço computacional.</p>
+<h2>
+<a id="user-content-labirintos-extras" class="anchor" href="http://localhost:6419/#labirintos-extras" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Labirintos Extras</h2>
+<p>Para este trabalho foram desenvolvidos mais mapas além dos <em>default</em> para testes situacionais dos
+algoritmos. Seguindo os mesmos padrões já existentes, mapas <em>Small</em>, <em>Mediun</em> e <em>Big</em>, em alguns
+dos mapas foi proporcionado mais caminhos para vitoria, porém alguns com uma distancia um pouco menor
+ou seja uma solução a primeira vista melhor, para poder se analisar como os algoritmos explorariam
+o mapa e qual seria a decisão tomada pelo mesmo.
+Outros proporcionam um mapa um tanto quanto bagunçado com uma ou no máximo duas possibilidades de
+vitoria, porém com percursos maiores e mais "complicados" para se chegar a uma escolha (uma escolha a
+qual não se baseia somente na vitória e sim qual caminho aparentemente seria o melhor a seguir).
+Tais mapas nos proporcionaram uma melhor comparação entre os algoritmos aqui aplicados, pois cada
+algoritmo demonstra um comportamento diferente em mapas iguais (o que é correto), com a construção de
+novos labirintos tornou-se possível um o qual o caminhos tomado por todo é o mesmo, porem cada um explorando
+e seguindo sua ideia de busca.</p>
+<p><a href="./RELATORIO_files/mapSmall1.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapSmall1.png" alt="Map Small 1" style="max-width:100%;"></a></p>
+<p><strong>Figura 1: Labirinto pequeno 1.</strong></p>
+<p><a href="./RELATORIO_files/mapSmall2.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapSmall2.png" alt="Map Small 2" style="max-width:100%;"></a></p>
+<p><strong>Figura 2: Labirinto pequeno 2.</strong></p>
+<p><a href="./RELATORIO_files/mapSmall3.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapSmall3.png" alt="Map Small 3" style="max-width:100%;"></a></p>
+<p><strong>Figura 3: Labirinto pequeno 3.</strong></p>
+<p><a href="./RELATORIO_files/mapSmall4.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapSmall4.png" alt="Map Small 4" style="max-width:100%;"></a></p>
+<p><strong>Figura 4: Labirinto pequeno 4.</strong></p>
+<p><a href="./RELATORIO_files/mapSmall5.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapSmall5.png" alt="Map Small 5" style="max-width:100%;"></a></p>
+<p><strong>Figura 5: Labirinto pequeno 5.</strong></p>
+<p><a href="./RELATORIO_files/mapMediun1.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapMediun1.png" alt="Map Mediun 1" style="max-width:100%;"></a></p>
+<p><strong>Figura 6: Labirinto médio 1.</strong></p>
+<p><a href="./RELATORIO_files/mapMediun2.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapMediun2.png" alt="Map Mediun 2" style="max-width:100%;"></a></p>
+<p><strong>Figura 7: Labirinto médio 2.</strong></p>
+<p><a href="./RELATORIO_files/mapMediun3.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapMediun3.png" alt="Map Mediun 3" style="max-width:100%;"></a></p>
+<p><strong>Figura 8: Labirinto médio 3.</strong></p>
+<p><a href="./RELATORIO_files/mapMediun4.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapMediun4.png" alt="Map Mediun 4" style="max-width:100%;"></a></p>
+<p><strong>Figura 9: Labirinto médio 4.</strong></p>
+<p><a href="./RELATORIO_files/mapBig1.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapBig1.png" alt="Map Big 1" style="max-width:100%;"></a></p>
+<p><strong>Figura 10: Labirinto grande 1.</strong></p>
+<p><a href="./RELATORIO_files/mapBig2.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapBig2.png" alt="Map Big 2" style="max-width:100%;"></a></p>
+<p><strong>Figura 11: Labirinto grande 2.</strong></p>
+<p><a href="./RELATORIO_files/mapBig3.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapBig3.png" alt="Map Big 3" style="max-width:100%;"></a></p>
+<p><strong>Figura 12: Labirinto grande 3.</strong></p>
+<p><a href="./RELATORIO_files/mapBig4.png" target="_blank" rel="noopener noreferrer"><img src="./RELATORIO_files/mapBig4.png" alt="Map Big 4" style="max-width:100%;"></a></p>
+<p><strong>Figura 13: Labirinto grande 4.</strong></p>
+
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+  </div>
+  <div>&nbsp;</div>
+  </div><script>
+    function showCanonicalImages() {
+      var images = document.getElementsByTagName('img');
+      if (!images) {
+        return;
+      }
+      for (var index = 0; index < images.length; index++) {
+        var image = images[index];
+        if (image.getAttribute('data-canonical-src') && image.src !== image.getAttribute('data-canonical-src')) {
+          image.src = image.getAttribute('data-canonical-src');
+        }
+      }
+    }
+
+    function scrollToHash() {
+      if (location.hash && !document.querySelector(':target')) {
+        var element = document.getElementById('user-content-' + location.hash.slice(1));
+        if (element) {
+           element.scrollIntoView();
+        }
+      }
+    }
+
+    function autorefreshContent(eventSourceUrl) {
+      var initialTitle = document.title;
+      var contentElement = document.getElementById('grip-content');
+      var source = new EventSource(eventSourceUrl);
+      var isRendering = false;
+
+      source.onmessage = function(ev) {
+        var msg = JSON.parse(ev.data);
+        if (msg.updating) {
+          isRendering = true;
+          document.title = '(Rendering) ' + document.title;
+        } else {
+          isRendering = false;
+          document.title = initialTitle;
+          contentElement.innerHTML = msg.content;
+          showCanonicalImages();
+        }
+      }
+
+      source.onerror = function(e) {
+        if (e.readyState === EventSource.CLOSED && isRendering) {
+          isRendering = false;
+          document.title = initialTitle;
+        }
+      }
+    }
+
+    window.onhashchange = function() {
+      scrollToHash();
+    }
+
+    window.onload = function() {
+      scrollToHash();
+    }
+
+    showCanonicalImages();
+
+    var autorefreshUrl = document.getElementById('preview-page').getAttribute('data-autorefresh-url');
+    if (autorefreshUrl) {
+      autorefreshContent(autorefreshUrl);
+    }
+  </script>
+
+</body></html>
